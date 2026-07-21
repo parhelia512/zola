@@ -10,7 +10,7 @@ RUN apk add --no-cache \
 WORKDIR /app
 COPY . .
 
-RUN cargo build --release && \
+RUN cargo build --release --features indexing-zh && \
     cp target/release/zola zola && \
     ./zola --version
 

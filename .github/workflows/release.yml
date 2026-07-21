@@ -59,11 +59,11 @@ jobs:
         if: ${{ endsWith(matrix.target, 'linux-musl') }}
 
       - name: Cargo build
-        run: cargo build --release --target ${{ matrix.target }}
+        run: cargo build --release --features indexing-zh --target ${{ matrix.target }}
         if: ${{ ! endsWith(matrix.target, 'linux-musl') }}
 
       - name: Cargo zigbuild
-        run: cargo zigbuild --release --target ${{ matrix.target }}
+        run: cargo zigbuild --release --features indexing-zh --target ${{ matrix.target }}
         if: ${{ endsWith(matrix.target, 'linux-musl') }}
 
       - name: Show version
